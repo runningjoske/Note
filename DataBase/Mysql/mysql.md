@@ -25,3 +25,17 @@ DROP INDEX index_name ON table
 
 ```
 
+报错 sql_mode=only_full_group_by
+
+```
+
+//查看mysql配置
+select @@global.sql_mode;
+
+//剔除返回结果中的ONLY_FULL_GROUP_BY ，然后重新set进去
+SET GLOBAL sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+
+//再次查看mysql配置，是否ONLY_FULL_GROUP_BY已剔除
+
+```
+
