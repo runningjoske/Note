@@ -68,6 +68,8 @@ end
 redis-cli -n 1 --eval ./de.lua "*name*"
 ```
 
+
+
 ## tail 命令
 
 实时查看文件刷新内容
@@ -87,5 +89,26 @@ grep 'context1' info.log |grep 'context2'
 grep -100A info.log   
 //搜索目标前的一百行
 grep -100B info.log   
+```
+
+
+
+## sftp命令
+
+```
+#远程连接
+sftp -oPort=60001 root@192.168.0.254
+
+# 获取远程文件
+get remote_source_file local_dest
+ 
+# 获取远程文件夹
+get -r remote_source_dir local_dest
+
+# 上传本地文件
+put local_file remote_dest
+ 
+# 上传本地文件夹
+put -r local_source_dir remote_dest
 ```
 
